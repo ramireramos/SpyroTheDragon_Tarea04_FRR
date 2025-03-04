@@ -4,6 +4,20 @@
     <string name="characters">Personajes</string>
     <string name="collectibles">Coleccionables</string>
     <string name="title_about">Acerca de</string>
-    <string name="text_about">Aplicación desarrollada por \n <b>Lindsay Barrero Martínez.</b></string>
+    <string name="text_about">Aplicación desarrollada por \n <b>Francisco Ramírez Ramos.</b></string>
     <string name="accept">Aceptar</string>
+    <string name="bienvenida_guia">Bienvenido a la Guia de Spyro</string>
+    <string name="boton_personajes">Botón personajes</string>
+    <string name="boton_mundos">Botón mundos</string>
+    <string name="boton_coleccionables">Botón coleccionables</string>
+    <string name="boton_info">Botón información</string>
+    <string name="text_info_guia">Aquí aprenderás a navegar por pestañas \n <b> llenas de dragones, mundos fascinantes </b> \n <b> y montones de tesoros brillantes </b> \n \n <b> ¿Estás preparado? </b> \n \n <b> Pulsa COMENZAR para adentrarte </b></string>
+    <string name="text_fragment_personajes">Pulsa aquí para ver la lista \n <b> de personajes.</b></string>
+    <string name="text_fragment_mundos">Pulsa aquí para ver la lista \n <b> de mundos.</b></string>
+    <string name="text_fragment_coleccionables">Pulsa aquí para ver la lista \n <b> de coleccionables.</b></string>
+    <string name="text_fragment_information">Pulsa aquí para ver la \n <b> información de la app.</b></string>
+    <string name="intro_button">Comenzar</string>
+    <string name="text_resumen">A través de esta guía has aprendido a moverte \n <b> por la app de Spyro The Dragon </b> \n <b> y sus apasionantes mundos.</b></string>
+    <string name="saltar_guia">Saltar Guía</string>
+    <string name="finalizar">Finalizar</string>
 </resources>

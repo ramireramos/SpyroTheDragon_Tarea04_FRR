@@ -1,5 +1,6 @@
 package dam.pmdm.spyrothedragon;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -7,15 +8,19 @@ import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
 import dam.pmdm.spyrothedragon.databinding.ActivityMainBinding;
+import dam.pmdm.spyrothedragon.ui.GuideDialogFragment;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String PREFS_NAME = "SpyroPrefs";
+    private static final String KEY_GUIDE_SHOWN = "guide_shown";
     private ActivityMainBinding binding;
     NavController navController = null;
 
@@ -25,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        Toolbar toolbar = binding.toolbar;
+        setSupportActionBar(toolbar);
 
         Fragment navHostFragment = getSupportFragmentManager().findFragmentById(R.id.navHostFragment);
         if (navHostFragment != null) {
@@ -39,27 +47,30 @@ public class MainActivity extends AppCompatActivity {
             if (destination.getId() == R.id.navigation_characters ||
                     destination.getId() == R.id.navigation_worlds ||
                     destination.getId() == R.id.navigation_collectibles) {
-                // Para las pantallas de los tabs, no queremos que aparezca la flecha de atrás
                 getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-            }
-            else {
-                // Si se navega a una pantalla donde se desea mostrar la flecha de atrás, habilítala
+            } else {
                 getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             }
         });
 
+        // Verificar si la guía ya se mostró
+        SharedPreferences prefs = getSharedPreferences("SpyroPrefs", MODE_PRIVATE);
+        boolean guideShown = prefs.getBoolean("guide_shown", false);
+
+        if (!guideShown) {
+            new GuideDialogFragment().show(getSupportFragmentManager(), "GuideDialog");
+        }
     }
+
 
     private boolean selectedBottomMenu(@NonNull MenuItem menuItem) {
         if (menuItem.getItemId() == R.id.nav_characters)
             navController.navigate(R.id.navigation_characters);
-        else
-        if (menuItem.getItemId() == R.id.nav_worlds)
+        else if (menuItem.getItemId() == R.id.nav_worlds)
             navController.navigate(R.id.navigation_worlds);
         else
             navController.navigate(R.id.navigation_collectibles);
         return true;
-
     }
 
     @Override
@@ -79,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void showInfoDialog() {
+    public void showInfoDialog() {
         // Crear un diálogo de información
         new AlertDialog.Builder(this)
                 .setTitle(R.string.title_about)
@@ -87,7 +98,9 @@ public class MainActivity extends AppCompatActivity {
                 .setPositiveButton(R.string.accept, null)
                 .show();
     }
-
-
-
+    public void changeMainSection(int sectionId) {
+        if (navController != null) {
+            navController.navigate(sectionId);
+        }
+    }
 }

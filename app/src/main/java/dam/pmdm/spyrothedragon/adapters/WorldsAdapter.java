@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import dam.pmdm.spyrothedragon.FireBreath;
 import dam.pmdm.spyrothedragon.R;
 import dam.pmdm.spyrothedragon.models.World;
 
@@ -35,6 +36,7 @@ public class WorldsAdapter extends RecyclerView.Adapter<WorldsAdapter.WorldsView
         // Cargar la imagen (simulado con un recurso drawable)
         int imageResId = holder.itemView.getContext().getResources().getIdentifier(world.getImage(), "drawable", holder.itemView.getContext().getPackageName());
         holder.imageImageView.setImageResource(imageResId);
+        holder.fireView.setVisibility(View.INVISIBLE);
     }
 
     @Override
@@ -46,11 +48,13 @@ public class WorldsAdapter extends RecyclerView.Adapter<WorldsAdapter.WorldsView
 
         TextView nameTextView;
         ImageView imageImageView;
+        FireBreath fireView;
 
         public WorldsViewHolder(View itemView) {
             super(itemView);
             nameTextView = itemView.findViewById(R.id.name);
             imageImageView = itemView.findViewById(R.id.image);
+            fireView = itemView.findViewById(R.id.fire_container);
         }
     }
 }

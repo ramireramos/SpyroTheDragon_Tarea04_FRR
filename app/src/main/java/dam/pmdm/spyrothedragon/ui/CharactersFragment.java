@@ -53,6 +53,8 @@ public class CharactersFragment extends Fragment {
         binding = null;
     }
 
+
+
     private void loadCharacters() {
         try {
             // Cargamos el archivo XML desde res/xml (NOTA: ahora se usa R.xml.characters)

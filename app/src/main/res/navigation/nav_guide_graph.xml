@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/navigation_guide1">
+
+    <fragment
+        android:id="@+id/navigation_guide1"
+        android:name="dam.pmdm.spyrothedragon.ui.GuideFragment1"
+        android:label="Guía 1"
+        tools:layout="@layout/fragment_guide1">
+        <action
+            android:id="@+id/action_guide1_to_guide2"
+            app:destination="@id/navigation_guide2"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_guide2"
+        android:name="dam.pmdm.spyrothedragon.ui.GuideFragment2"
+        android:label="Guía 2"
+        tools:layout="@layout/fragment_guide2">
+        <action
+            android:id="@+id/action_guide2_to_guide3"
+            app:destination="@id/navigation_guide3"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_guide3"
+        android:name="dam.pmdm.spyrothedragon.ui.GuideFragment3"
+        android:label="Guía 3"
+        tools:layout="@layout/fragment_guide3">
+        <action
+            android:id="@+id/action_guide3_to_guide4"
+            app:destination="@id/navigation_guide4"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_guide4"
+        android:name="dam.pmdm.spyrothedragon.ui.GuideFragment4"
+        android:label="Guía 4"
+        tools:layout="@layout/fragment_guide4">
+        <action
+            android:id="@+id/action_guide4_to_guide5"
+            app:destination="@id/navigation_guide5"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_guide5"
+        android:name="dam.pmdm.spyrothedragon.ui.GuideFragment5"
+        android:label="Guía 5"
+        tools:layout="@layout/fragment_guide5">
+        <action
+            android:id="@+id/action_guide5_to_guide6"
+            app:destination="@id/navigation_guide6"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_guide6"
+        android:name="dam.pmdm.spyrothedragon.ui.GuideFragment6"
+        android:label="Guía 6"
+        tools:layout="@layout/fragment_guide6">
+        <action
+            android:id="@+id/action_guide6_to_home"
+            app:destination="@id/navigation_characters"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+    </fragment>
+
+</navigation>

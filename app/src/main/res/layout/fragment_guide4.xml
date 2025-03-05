@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/guide_intro_background"
+    tools:visibility="visible" >
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline66"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.66" />
+
+    <ImageView
+        android:id="@+id/fire"
+        android:layout_width="124dp"
+        android:layout_height="124dp"
+        android:src="@drawable/fire_svgrepo_com"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline66"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/speech_balloon3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="120dp"
+        android:src="@drawable/speech_balloon3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/fire" />
+
+    <TextView
+        android:id="@+id/guide_description"
+        android:layout_width="225dp"
+        android:layout_height="50dp"
+        android:layout_margin="8dp"
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:text="@string/text_fragment_coleccionables"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/speech_balloon3"
+        app:layout_constraintEnd_toEndOf="@id/speech_balloon3"
+        app:layout_constraintHorizontal_bias="0.416"
+        app:layout_constraintStart_toStartOf="@id/speech_balloon3"
+        app:layout_constraintTop_toTopOf="@id/speech_balloon3"
+        app:layout_constraintVertical_bias="0.393" />
+
+    <TextView
+        android:id="@+id/guide_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:text="@string/boton_coleccionables"
+        android:textColor="#FF9800"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/guide_description"
+        app:layout_constraintEnd_toEndOf="@id/speech_balloon3"
+        app:layout_constraintHorizontal_bias="0.432"
+        app:layout_constraintStart_toStartOf="@id/speech_balloon3" />
+
+    <Button
+        android:id="@+id/btn_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="552dp"
+        android:backgroundTint="@color/transparent"
+        android:text="@string/saltar_guia"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_next"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="146dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="16dp"
+        android:text="Siguiente"
+        android:textColor="@color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/speech_balloon3"
+        app:layout_constraintVertical_bias="1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
